@@ -1,0 +1,191 @@
+.top-space {
+    // margin-top: 80px !important
+
+}
+
+.side-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.clear-filtertext {
+    color: rgba(67, 118, 108, 1);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.category-titles {
+    font-weight: 700;
+    font-size: 16px;
+
+}
+
+.chips-button {
+    margin-top: 5px !important;
+    display: flex;
+    background-color: rgba(67, 118, 108, 0.3);
+    border-radius: 5px;
+    color: #000000 !important;
+    font-size: 12px;
+    font-weight: 400;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px 5px !important;
+    width: 95%;
+    letter-spacing: 1px !important;
+}
+
+.list-itemtext {
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+}
+
+.chips-text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.close-icon {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1) !important;
+
+}
+
+.rule {
+    border-bottom: 0.96px solid #DDDDDD;
+    margin: 5px !important
+}
+
+input[type="checkbox"] {
+    accent-color: #5B895D
+}
+
+input[type="checkbox"]::before {
+    border: 2px solid #5B895D;
+    background-color: #5B895D
+}
+
+::ng-deep mat-expansion-panel-header:hover {
+    background-color: transparent !important;
+}
+
+input[type="checkbox"] {
+    accent-color: #5B895D
+}
+
+input[type="checkbox"]::before {
+    border: 2px solid #5B895D;
+    background-color: #5B895D
+}
+
+::ng-deep .mat-expansion-panel {
+    box-shadow: none !important;
+}
+
+
+::ng-deep .mat-expansion-panel-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 15px !important;
+    border-radius: inherit;
+    transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);
+    height: var(--mat-expansion-header-collapsed-state-height);
+    font-family: var(--mat-expansion-header-text-font);
+    font-size: var(--mat-expansion-header-text-size);
+    font-weight: var(--mat-expansion-header-text-weight);
+    line-height: var(--mat-expansion-header-text-line-height);
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 15px !important;
+}
+
+.checktxt {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    color: rgba(80, 80, 80, 1);
+
+}
+
+.category-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px !important;
+}
+
+.min-textbox {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(222, 226, 231, 1);
+    padding: 10px !important
+}
+
+.apply-button {
+    width: 100%;
+    border-radius: 6px;
+    padding: 9px !important;
+    border: 1px solid rgba(222, 226, 231, 1);
+    color: rgba(67, 118, 108, 1);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(56, 56, 56, 0.08);
+}
+
+.mat-mdc-slider.mat-primary {
+    --mdc-slider-handle-color: rgba(226, 235, 244, 1);
+    --mdc-slider-focus-handle-color: rgba(226, 235, 244, 1);
+    --mdc-slider-hover-handle-color: #3f51b5;
+    --mdc-slider-active-track-color: rgba(67, 118, 108, 1);
+    --mdc-slider-inactive-track-color: rgba(163, 208, 199, 1);
+    --mdc-slider-with-tick-marks-active-container-color: #fff;
+    --mdc-slider-with-tick-marks-inactive-container-color: #3f51b5;
+    --mat-mdc-slider-ripple-color: #3f51b5;
+    --mat-mdc-slider-hover-ripple-color: rgba(63, 81, 181, 0.05);
+    --mat-mdc-slider-focus-ripple-color: rgba(63, 81, 181, 0.2);
+}
+.filter-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    padding: 10px !important;
+}
+.adjust {
+    margin-top: 0% !important
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    .filter-section {
+        display: none;
+    }
+}
+    @media only screen and (min-width: 768px) and (max-width: 1500px) {
+        .lapview-filter {
+            display: none !important;
+        }
+        .tabview-align{
+            padding:1rem !important;
+        }
+        .category-title {
+            margin-top: 0px !important;
+        }
+        .min-textbox {
+            padding: 5px !important;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .premieumimg {
+            height: 150px !important;
+          }
+        
+          .product-name {
+            font-size: 13px !important;
+          }
+    }

@@ -1,0 +1,146 @@
+
+<div class="top-space"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-5 col-md-6 col-12">
+            <div class="image-slider">
+                <div class="main-image" >
+                    <img width="50%" [src]="images[activeImageIndex].image" alt="Main Image" class="zoomable-image">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1 prevcolumn" >
+                    <i  class="fa fa-arrow-left arrowicon" (click)="prevImage()" aria-hidden="true"></i> 
+                </div>
+                <div class="col-10">
+                <div class="thumbnail-images">
+                <div *ngFor="let img of images; let i = index" class="thumbnail"
+                    [class.active]="activeImageIndex === i" (click)="setActiveImage(i)">
+                    <img [src]="img?.image" alt="Thumbnail Image">
+                </div>
+            </div>
+            </div>
+                <div class="col-1 nextcolumn" >
+                    <i class="fa fa-arrow-right arrowicon" (click)="nextImage()" aria-hidden="true"></i> 
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-6 col-12">
+            <div class="mt-3">
+                <p class="product-head">Dream Palace Doll House
+                    <span>(40pcs)</span>
+                </p>
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <p class="product-detail">Model :<span class="detail-view"> A45c71</span> </p>
+                        <p class="product-detail">Brand : <span class="detail-view"> Lorem ipsum</span></p>
+                    </div>
+                    <div class="col-6">
+                        <p class="product-detail">Availability : <span class="detail-view" style="color: 
+                            #2DB224 !important;"> In Stock</span></p>
+                        <p class="product-detail">Category :<span class="detail-view"> Doll Houses</span> </p>
+                    </div>
+                </div>
+                <div class="d-flex mt-3" style="align-items: baseline;">
+                    <p class="product-amount">₹1500.00</p>
+                    <p class="product-detail mx-2"><del>₹2500.00</del></p>
+                    <p class="offer-text mx-2">30% OFF</p>
+                </div>
+
+                <div class="cardgrid mt-4">
+                    <div class="d-flex">
+                        <button class="incrementBtn">+</button>
+                        <button class="countBtn">1</button>
+                        <button class="decrementBtn">-</button>
+                    </div>
+
+                    <div>
+                        <button class="cartBtn" >Add to card  <span> <i class="fa fa-shopping-cart"
+                                    aria-hidden="true"></i></span></button>
+                    </div>
+
+                    <div>
+                        <button class="buynowBtn" (click)="addtocart()">Buy Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-12">
+            <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+                <mat-tab label="Description">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-1 col-0"></div>
+                        <div class="col-lg-8 col-md-10 col-12 mt-4">
+                          <p style="text-align: justify;font-size: 14px;">
+                            This dollhouse is beautifully designed for girls. They are nicely painted & colorful. these
+                            durable dollhouses are designed to last. This frame is made of high-quality material,
+                            non-toxic, and harmless to the kids. The frame of the dollhouse is BPA Free, tough and
+                            durable. Our dollhouses are fully tested to the European EN71 toy safety standards. & IS
+                            9873 marked & BIS approved. Each edge is smooth, and without any splinters doesn't hurt your
+                            little girl. With a dollhouse, your girl will need to delicately move each tiny piece into
+                            the right spot. Playing with dollhouses also helps improve her observational skills. It
+                            builds her concentration and attention span as she goes about arranging items in the
+                            dollhouse.
+                          </p>
+                        </div>
+                        <div class="col-lg-2 col-md-1 col-0"></div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Highlights">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8 mt-4">
+                          <p style="text-align: justify;">
+                            This dollhouse is beautifully designed for girls. They are nicely painted & colorful. these
+                            durable dollhouses are designed to last. This frame is made of high-quality material,
+                            non-toxic, and harmless to the kids. The frame of the dollhouse is BPA Free, tough and
+                            durable. Our dollhouses are fully tested to the European EN71 toy safety standards. & IS
+                            9873 marked & BIS approved. Each edge is smooth, and without any splinters doesn't hurt your
+                            little girl. With a dollhouse, your girl will need to delicately move each tiny piece into
+                            the right spot. Playing with dollhouses also helps improve her observational skills. It
+                            builds her concentration and attention span as she goes about arranging items in the
+                            dollhouse.
+                          </p>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-3 mb-3">
+    <div class="row">
+        <h5>Realated Products</h5>
+        <div class="col-lg-2 col-md-3 col-sm-6 col-6 mt-3" *ngFor="let item of activeproducts">
+            <div class="card">
+                <div class="p-2">
+                    <img src="{{item?.image}}" height="150px" width="100%">
+                    <div class="d-flex mt-1" style="align-items:baseline !important;">
+                        <div>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <p class="mt-2" style="font-size: 12px;font-weight: 400;">(88)</p>
+                        </div>
+                    </div>
+                    <p class="active-product mt-1">{{item?.title}}</p>
+                    <p class="active-amount mt-1">{{item?.amount}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

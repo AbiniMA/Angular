@@ -1,0 +1,21 @@
+<div>
+    <h6>Address Book</h6>
+
+    <div class="row">
+        <p class="addaddress" (click)="addaddress()" ><i class="fa fa-plus" aria-hidden="true"></i> Add new address</p>
+        <div class="col-lg-6 col-md-12 col-12 mt-2 " *ngFor="let item of addresslist">
+            <div class="addressCard">
+                <p class="username">{{item?.name}}</p>
+                <p class="usernum mt-2">{{item?.number}}</p>
+                <p class="address mt-2">{{item?.address}}</p>
+                <div class="d-flex mt-2" style="align-items: baseline !important;">
+                    <p class="delete" (click)="deletepopup()">Delete</p>
+                    <p class="mx-2">|</p>
+                    <p class="edit" (click)="addaddress()"> Edit</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

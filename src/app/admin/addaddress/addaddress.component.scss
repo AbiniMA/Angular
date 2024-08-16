@@ -1,0 +1,32 @@
+.removepadding{
+    padding-left: 0px !important;
+}
+.inputStyle {
+    display: block !important;
+    width: 98% !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    background-color: #F6F6F6 !important;
+    background-clip: padding-box !important;
+    border: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    color: #807D7E !important;
+    appearance: none !important;
+    border-radius: 8px !important;
+    height: 40px !important;
+    transition: border-color .15s ease-in-out,
+        box-shadow .15s ease-in-out;
+}
+
+.addressBtn{
+    background-color: #43766C;
+    color: #fff;
+    border: none;
+    height: 35px;
+    width: 150px ;
+    border-radius: 5px !important;
+    font-size: 14px;
+}

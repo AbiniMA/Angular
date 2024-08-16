@@ -1,0 +1,94 @@
+.text-filter {
+    padding: 5px !important;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    color: black;
+    letter-spacing:1px;
+}
+.apply-button{
+    background: #43766C;
+    color: #fff;
+    border: none;
+    height: 32px;
+    width: 50%;
+    font-size: 14px;
+    border-radius: 5px !important;
+
+}
+.filter-grid{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    gap:5px;
+}
+.category-grid {
+    display: grid;
+    grid-template-columns: 43% 54%;
+    margin-top: 10px !important;
+    gap: 10px;
+}
+.categories-leftside {
+    background-color: #F7FBFF;
+    padding: 10px !important;
+    height:100vh;
+    border-bottom: 1px solid #ccc;
+
+}
+.catlist-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px !important;
+    padding: 1px !important;
+   
+}
+.text-size{
+    font-size:14px;
+    font-weight:400;
+}
+input[type="checkbox"] {
+    accent-color: #5B895D
+}
+input[type="checkbox"]::before {
+    border: 2px solid #5B895D;
+    background-color: #5B895D
+}
+.mat-mdc-slider.mat-primary {
+    --mdc-slider-handle-color: rgba(226, 235, 244, 1);
+    --mdc-slider-focus-handle-color: rgba(226, 235, 244, 1);
+    --mdc-slider-hover-handle-color: #3f51b5;
+    --mdc-slider-active-track-color: rgba(67, 118, 108, 1);
+    --mdc-slider-inactive-track-color: rgba(163, 208, 199, 1);
+    --mdc-slider-with-tick-marks-active-container-color: #fff;
+    --mdc-slider-with-tick-marks-inactive-container-color: #3f51b5;
+    --mat-mdc-slider-ripple-color: #3f51b5;
+    --mat-mdc-slider-hover-ripple-color: rgba(63, 81, 181, 0.05);
+    --mat-mdc-slider-focus-ripple-color: rgba(63, 81, 181, 0.2);
+}
+
+.min-textbox {
+    width: 80%;
+    border-radius: 6px;
+    border: 1px solid rgba(222, 226, 231, 1);
+    padding: 10px !important
+}
+.test {
+    text-align: center !important;
+    width: 200% !important;
+    border: none;
+    padding: 6px !important;
+    background-color: #43766c;
+    border-radius: 6px !important;
+    color: #fff;
+}
+.clear-fliter{
+    padding: 5px !important;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19px;
+    color:#43766c;
+    letter-spacing: 1px;
+}
+.active {
+    color: #43766c; 
+    font-weight: bold; 
+}

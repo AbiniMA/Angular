@@ -1,0 +1,21 @@
+.heart{
+    color: #43766C;
+}
+.removepadding{
+    padding-left: 0px !important;
+}
+.premieumimg{
+    width: 100% !important;
+    height: 200px !important;
+}
+
+@media screen and (max-width: 767px) {
+.premieumimg {
+    height: 150px !important;
+  }
+
+  .product-name {
+    font-size: 13px !important;
+  }
+
+}

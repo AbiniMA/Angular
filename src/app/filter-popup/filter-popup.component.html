@@ -1,0 +1,66 @@
+<div class="popup-container">
+    <div class="div" style="display:flex;justify-content: space-between;">
+        <div class="filterarrow">
+            <i class="fa fa-arrow-left" (click)="dialogClose()"></i><span class="text-filter">Filter</span>
+        </div>
+        <div class="clear-fliter">
+        <P>clear all filters</P>
+        </div>
+    </div>
+   <div class="category-grid">
+    <div class="categories-leftside">
+        <h4 style="color:#43766C;font-weight: 500;font-size: 16px;margin-top:5px !important">Categories</h4>
+        <div class="catlistrow" *ngFor="let item of catlistrow;let i=index;" style="margin-top: 10px !important;">
+            <P class="text-size" (click)="changeDesign(i)" [class.active]="selectedCategoryIndex === i">{{item?.catname}}</P>
+        </div>
+    </div>
+
+    <div class="categories-rightside " style="margin-top:15px !important;">
+           <div class="catlist-container" *ngFor="let items of subCategory">
+            <div class="" *ngIf="this.selectedCategoryIndex===0">
+                <label for="checkbox" class="text-size">{{items?.catname}}</label>
+            </div>
+            <div class="" *ngIf="this.selectedCategoryIndex===0">
+                <input type="checkbox" id="checkbox" name="checkbox">
+            </div>
+        </div>   
+
+        <div class="catlist-container" *ngFor="let items of brands">
+           
+            <div class="category-item" *ngIf="this.selectedCategoryIndex===1">
+                <input type="checkbox" id="checkbox" name="checkbox">
+                <label for="checkbox" class="text-size mx-2">{{items?.brandname}}</label>
+            </div>
+        </div>
+        <div class="row" *ngIf="this.selectedCategoryIndex===2">
+            <div style="padding:5px;">
+                <mat-slider min="200" max="500" style="width:90%;">
+                    <input value="300" matSliderStartThumb>
+                    <input value="400" matSliderEndThumb>
+                </mat-slider>
+            </div>
+            <div class="range-values-patchbox">
+                <div class="row">
+                    <div class="col-12">
+                        <P>Min</P>
+                        <input type="text" class="min-textbox" id="minPrice" name="minPrice" class="min-textbox"
+                            placeholder="0">
+                    </div>
+                    <div class="col-12">
+                        <P>Max</P>
+                        <input type="text" class="min-textbox" id="minPrice" name="minPrice" class="min-textbox"
+                            placeholder="999999">
+                    </div>
+                </div>
+
+            </div>
+           
+        </div>
+       
+    </div>
+   </div>
+   <div class="div mt-3" style="position: fixed; bottom: 5px; left: 60%; transform: translateX(-50%);">
+    <button class="test">Apply</button>
+
+</div>
+</div>

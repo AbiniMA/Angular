@@ -1,0 +1,211 @@
+<div>
+    <div class="pageheader lapview">
+        <div class="d-flex justify-content-between" style="align-items: baseline !important;">
+            <div>
+                <p>Welcome to alo eCommerce store. </p>
+            </div>
+            <div class="d-flex">
+                <p>Follow us : <span>
+                        <i class="fa fa-twitter socialmedia" aria-hidden="true"></i>
+                        <i class="fa fa-facebook-square socialmedia"></i>
+                        <i class="fa fa-instagram socialmedia" aria-hidden="true"></i>
+                    </span><span class="mx-3">|</span></p>
+                <p class="contacttext">abc@gmail.com</p>
+                <p class="contacttext">+91 98765 43210</p>
+            </div>
+        </div>
+    </div>
+    <mat-toolbar class="navbar">
+        <mat-toolbar-row>
+            <!-- mobile nav start-->
+            <div class="mobileview" style="width: 100% !important;">
+                <div class="mobflex">
+                    <div class="d-flex">
+                        <button mat-icon-button (click)="sidenav.toggle()">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <div class="mx-2">
+                            <h5 style="color: #fff;" (click)="routehome()">LOGO</h5>
+                        </div>
+                    </div>
+
+
+
+                    <div class="">
+                        <div class="d-flex">
+                            <img class="navicon" src="assets/images/shopping-cart-01 1.svg" (click)="addcart()">
+                            <img class="navicon" src="assets/images/Heart.svg" (click)="wishlist()">
+                            <img class="navicon" src="assets/images/User 2.svg" (click)="loginUser()">
+                            <img class="navicon" src="assets/images/User fill.svg" (click)="profile()">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- mobile nav end-->
+
+            <!-- lap nav start-->
+            <div class="lapview" style="width: 100% !important;">
+                <div class="navflex">
+                    <div class="">
+                        <h5 style="color: #fff;" (click)="routehome()">LOGO</h5>
+                    </div>
+                    <div class="">
+                        <div class="search-box">
+                            <input type="search" class="search-input" placeholder="Search for anything...">
+                            <button class="search-button" type="submit" value="search">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div class="d-flex">
+                            <img class="navicon" src="assets/images/shopping-cart-01 1.svg" (click)="addcart()">
+                            <img class="navicon" src="assets/images/Heart.svg" (click)="wishlist()">
+                            <img class="navicon" src="assets/images/User 2.svg" (click)="loginUser()">
+                            <img class="navicon" src="assets/images/User fill.svg" (click)="profile()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="mobilesearch mobileview">
+        <div class="search-box">
+            <input type="search" class="search-input" placeholder="Search..">
+            <button class="search-button" type="submit" value="search">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+    <!-- megamenulapviewstart -->
+    <div *ngIf="showMegaMenu" class="container lapview">
+        <div class="mega-menu" style="margin-top: 83px !important; background-color: white !important;">
+            <div class="dropdown" *ngFor="let item of menulist">
+                <button class="dropbtn">{{item?.menu}} <span style="color:rgba(2, 36, 82, 1);font-size: 16px;"><i
+                            class="fa fa-angle-down px-2"></i></span></button>
+                <div class="dropdown-content">
+                    <div class="rowsize">
+                        <div class="shoplist">
+                            <div class="column" *ngFor="let column of columns">
+                                <ul>
+                                    <li *ngFor="let category of column" class="custom-li">
+                                        {{ category.category }}
+                                        <ul>
+                                            <li *ngFor="let subItem of category.subItems">{{ subItem }}</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- megamenulapviewend -->
+
+
+
+
+
+    <!-- menumobileviewstart -->
+
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav>
+            <mat-nav-list>
+                <nav class="sidebar" style="margin-top: 40px !important;">
+                    <ul *ngFor="let item of mobilenavlist">
+                        <li>
+                            <a class="feat-btn" (click)="toggleDropdown($event)">{{item?.category}}
+                                <i class="fa fa-caret-down first"></i>
+                            </a>
+                            <ul class="feat-show">
+                                <li *ngFor="let subCategory of item?.subCategory">
+                                    <a class="sub-cat-btn" (click)="toggleSubDropdown($event)">{{subCategory?.name}}
+                                        <i class="fa fa-caret-down first"></i>
+
+                                    </a>
+                                    <ul class="sub-cat-show">
+                                        <li *ngFor="let subItem of subCategory.subItems"><a
+                                                class="sub-item">{{subItem}}</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content fxFlexFill>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    <!-- menumobileviewend -->
+
+
+
+
+
+
+
+
+
+    <!-- footer start-->
+    <div class="mt-3" style="background-color: #43766C;padding: 20px !important;color: #fff;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12 mt-3">
+                    <p class="footerhead">Contact Information</p>
+                    <p class="footercontent mt-2">Customer Supports:</p>
+                    <p class="footerhead">+91 98765 43210</p>
+                    <p class="footercontent mt-2">Chettikulam Junction, Hindu College Rd, Chetti Kulam, Chenthooran
+                        Nagar, Nagercoil, Tamil Nadu
+                        629001</p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-12 mt-3">
+                    <p class="footerhead">Quick Links</p>
+                    <p class="footercontent">About Us</p>
+                    <p class="footercontent" (click)="privacy()">Privacy Policy</p>
+                    <p class="footercontent" (click)="terms()">Terms & Conditions</p>
+                    <p class="footercontent">Return, Replacement & Refund</p>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-12 mt-3">
+                    <p class="footerhead">Top Category</p>
+                    <p class="footercontent mt-2">Toys</p>
+                    <p class="footercontent">Educational</p>
+                    <p class="footercontent">Cloths</p>
+                    <p class="footercontent">Skin product</p>
+                    <p class="footercontent">Books</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12 mt-3">
+                    <p class="footerhead">Download our App</p>
+                    <div class="d-flex mt-2">
+                        <div>
+                            <img src="assets/images/Qrcode 1.png">
+                        </div>
+                        <div class="mx-2">
+                            <img src="assets/images/download-appstore.png"><br>
+                            <img class="mt-2" src="assets/images/playstore.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 col-12 mt-3">
+                    <p class="footerhead">Touch with Us :</p>
+                    <div class="d-flex mt-2">
+                        <i class="fa fa-twitter socialmedia mx-1" aria-hidden="true"></i>
+                        <i class="fa fa-facebook-square socialmedia mx-1"></i>
+                        <i class="fa fa-instagram socialmedia mx-1" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer end-->
+</div>

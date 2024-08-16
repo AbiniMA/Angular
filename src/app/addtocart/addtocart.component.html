@@ -1,0 +1,66 @@
+
+
+<div class="top-space mobileview"></div>
+<div class="container-fluid">
+    <h5>My cart (3)</h5>
+    <div class="row">
+        <div class="col-lg-8 col-md-6 col-12" >
+            <div class="cartoutline mt-4">
+                <div class="cartgrid mt-2" *ngFor="let item of cartitems">
+                    <div>
+                        <img src="{{item?.image}}" class="cartimage">
+                    </div>
+                    <div>
+                        <p class="cartname">{{item?.name}}</p>
+                        <p class="description ">{{item?.description}} </p>
+                        <button class="removebtn mt-2 mb-3">Remove</button>
+                    </div>
+                    <div class="text-end ">
+                        <p class="cartamount">{{item?.amount}}</p>
+                        <div class="d-flex mt-2" style="justify-content: end;">
+                            <button class="incrementBtn">+</button>
+                            <button class="countBtn">1</button>
+                            <button class="decrementBtn">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="backbtn mt-3" (click)="backtoshop()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to
+                        shop</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-12">
+            <div class="cartoutline mt-4">
+                <h6>Card Totals</h6>
+                <div class="row mt-2">
+                    <div class="col-6" >
+                        <p class="carthead">Sub-total</p>
+                        <p class="carthead">Discount</p>
+                        <p class="carthead">Delivery charges</p>
+                        <p class="carthead">Other charges</p>
+                    </div>
+                    <div class="col-6 text-end">
+                        <p class="amountdetails">₹4500.00</p>
+                        <p class="amountdetails">₹ 0.00</p>
+                        <p class="amountdetails">₹ 0.00</p>
+                        <p class="amountdetails">₹ 0.00</p>
+                    </div>
+                </div>
+                <mat-divider class="mt-2"></mat-divider>
+                <div class="row">
+                    <div class="col-6" >
+                        <p class="amountdetails">Total</p>
+                    </div>
+                    <div class="col-6 text-end">
+                        <p class="amountdetails">₹4500.00</p>
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                    <button class="continueBtn" (click)="checkout()">Continue <i class="fa fa-arrow-right mx-2" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,234 @@
+.image-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-space {
+    margin-top: 50px !important
+    
+    }
+.main-image {
+    margin-bottom: 20px !important;
+    height: 250px !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #E4E7E9;
+}
+
+.zoomable-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.zoomable-image:hover {
+    transform: scale(1.2);
+}
+
+
+.thumbnail-images {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    width: 100% !important;
+    gap: 5px !important;
+    justify-content: center !important;
+}
+
+
+
+.thumbnail img {
+    width: 100% !important;
+    height: 80px;
+    border: 1px solid #E4E7E9;
+}
+
+.thumbnail.active img {
+    border: 2px solid #43766C;
+}
+
+.prevcolumn {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.nextcolumn {
+    display: flex;
+    align-items: center;
+    justify-content: end !important;
+}
+
+.arrowicon {
+    background: #43766C;
+    padding: 10px !important;
+    color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.product-head {
+    font-size: 20px !important;
+    font-weight: 600;
+}
+
+.product-detail {
+    font-size: 14px !important;
+    color: #77878F;
+    font-weight: 400;
+}
+
+.product-amount {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.detail-view {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    color: #191C1F !important;
+}
+
+.cardgrid {
+    display: grid;
+    grid-template-columns: 20% 30% 20%;
+    gap: 15px !important;
+}
+
+.incrementBtn {
+    border: 1px solid #E4E7E9 !important;
+    border-right: none !important;
+    width: 33% !important;
+    height: 35px !important;
+    font-size: 16px !important;
+    justify-content: center !important;
+    align-items: center;
+    display: flex;
+    background-color: #fff;
+    border-radius: 3px !important;
+}
+
+.countBtn {
+    border: none;
+    border-top: 1px solid #E4E7E9 !important;
+    border-bottom: 1px solid #E4E7E9 !important;
+    width: 33% !important;
+    height: 35px !important;
+    font-size: 16px !important;
+    justify-content: center !important;
+    align-items: center;
+    display: flex;
+    background-color: #fff;
+    border-radius: 3px !important;
+}
+
+.decrementBtn {
+    border: 1px solid #E4E7E9 !important;
+    border-left: none !important;
+    width: 33% !important;
+    height: 35px !important;
+    font-size: 16px !important;
+    justify-content: center !important;
+    align-items: center;
+    display: flex;
+    background-color: #fff;
+    border-radius: 3px !important;
+}
+
+.cartBtn {
+    background-color: #76453B !important;
+    color: #fff;
+    font-size: 14px !important;
+    width: 100%;
+    border: none !important;
+    height: 35px !important;
+    border-radius: 3px !important;
+}
+
+.buynowBtn {
+    background-color: #fff;
+    border: 1px solid #76453B;
+    width: 100% !important;
+    height: 35px !important;
+    font-size: 14px !important;
+    border-radius: 3px !important;
+}
+
+.active-product {
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    width: 90%;
+}
+
+.active-amount {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #2DA5F3;
+}
+
+::ng-deep .mdc-tab {
+    min-width: 90px;
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border: none;
+    outline: none;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    z-index: 1;
+}
+
+::ng-deep .mat-mdc-tab.mdc-tab--active .mdc-tab__text-label {
+    color: #022452 !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+}
+
+
+::ng-deep .mat-mdc-tab .mdc-tab-indicator__content--underline {
+    border-color: #022452 !important;
+}
+
+::ng-deep .mat-mdc-tab-body-content {
+    height: 100%;
+    overflow: hidden !important;
+}
+
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(20px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.fa-shopping-cart {
+    position: relative;
+    animation: moveLeftRight 2s infinite;
+}
+@media screen and (max-width: 767px) {
+    .cardgrid {
+        display: grid;
+        grid-template-columns: 25% 40% 25%;
+        gap: 10px !important;
+    }
+
+    .top-space {
+        margin-top: 80px !important
+      }
+}
+

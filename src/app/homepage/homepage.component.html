@@ -1,0 +1,184 @@
+<div class="top-space"></div>
+
+
+<div>
+    <!-- carouselbanner -->
+    <div class="banner">
+        <div class="owl-carousel bannercarousel owl-theme owl-loaded owl-drag">
+            <div class="owl-stage-outer">
+                <div class="owl-stage">
+                    <div class="owl-item" *ngFor="let item of buyerbannerlist">
+                        <div class="item"> <img src="{{item?.img}}"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- carouselbanner end-->
+
+    <!-- premium products start-->
+    <div class="container-fluid mt-3">
+        <div class="lapview">
+            <h5 class="text-center ">Premium Products</h5>
+        </div>
+        <div class="mobileview">
+            <div class="d-flex justify-content-between ">
+                <div>
+                    <h5>Premium Products</h5>
+                </div>
+                <div>
+                    <p class="viewalltext" (click)="click()">View all <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <p class="viewall text-end  lapview">Browse All Product <span><i class="fa fa-arrow-right"
+                        aria-hidden="true"></i></span></p>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6" *ngFor="let item of premiumprouducts">
+                <div class="card premiumcard">
+                    <div class="card-header premiumcard-header">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="offer-text">{{item?.offer}}</p>
+                            </div>
+                            <div class="fav-icon">
+                                <i class="fa fa-heart-o heart" (click)="toggleHeart()" [class.clicked]="isClicked"
+                                    aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="text-center" (click)="viewProduct()">
+                            <img src="{{item?.image}}" class="premieumimg">
+                        </div>
+                    </div>
+                    <div class="card-body" (click)="viewProduct()"
+                        style="background-color: #fff; border:none !important;">
+                        <p class="product-name mt-2">{{item?.name}}</p>
+                        <p class="amount-text mt-1">{{item?.amount}} <span
+                                class="strike-text"><del>{{item?.strike}}</del></span></p>
+                        <div class="d-flex" style="align-items:baseline !important;">
+                            <div>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            <div>
+                                <p class="mt-2" style="font-size: 12px;font-weight: 400;">(88)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- premium products end-->
+
+    <!-- highlight product start-->
+    <div class="container-fluid mt-3">
+        <div class="row ">
+            <div class="col-lg-8 col-md-6 col-12 mt-2">
+                <img src="assets/images/Banner.png" width="100%" height="350px">
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 mt-2">
+                <img src="assets/images/Group 1000005943 1.png" width="100%" height="350px">
+            </div>
+        </div>
+    </div>
+    <!-- highlight product end-->
+
+    <!-- product carousel start-->
+    <div class="container-fluid-owl mt-3">
+        <h5 class="text-center mt-2 mb-3">Shop with Categories</h5>
+        <div class="carousel-wrap">
+            <div class="owl-carousel productcarouse">
+                <div class="item" *ngFor="let item of productcarousel" id="{{item.url}}">
+                    <div class="carouselcard">
+                        <img [src]="item?.url" width="100%" class="carouselimg">
+                        <p class="carouselhead">{{item?.title}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- product carousel end-->
+
+    <!-- Kids Fun Activites start-->
+    <div class="container-fluid mt-3 mb-3">
+        <div class="row">
+            <div class="col-lg-9 col-12">
+                <div class="lapview">
+                    <div class="row " style="align-items: baseline !important;">
+                        <div class="col-3">
+                            <h5>Kids Fun Activites</h5>
+                        </div>
+                        <div class="col-6 text-center">
+                            <div class="gridtext">
+                                <div *ngFor="let item of activities; let i = index">
+                                    <p class="activitytext" [ngClass]="{'textactive': item?.name == activename}"
+                                        (click)="activateItem(i,item)">{{item?.name}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-end">
+                            <p class="viewall">Browse All Product <span><i class="fa fa-arrow-right"
+                                        aria-hidden="true"></i></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobileview">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h5>Kids Fun Activites</h5>
+                        </div>
+                        <div>
+                            <p class="viewalltext">View all <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-1">
+                    <div class="col-lg-3 col-md-4 col-6 mt-3" *ngFor="let item of activeproducts">
+                        <div class="card">
+                            <div class="p-2">
+                                <img src="{{item?.image}}" height="150px" width="100%">
+                                <div class="d-flex mt-1" style="align-items:baseline !important;">
+                                    <div>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div>
+                                        <p class="mt-2" style="font-size: 12px;font-weight: 400;">(88)</p>
+                                    </div>
+                                </div>
+                                <p class="active-product mt-1">{{item?.title}}</p>
+                                <p class="active-amount mt-1">{{item?.amount}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-lg-3 col-12">
+                <div class="row">
+                    <div class="col-lg-12 col-md-6 mt-3">
+                        <div>
+                            <img src="assets/images/Group 1000005947.png" height="300px" width="100%">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-6 mt-2">
+                        <div>
+                            <img src="assets/images/Group 1000005946.png" height="300px" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Kids Fun Activites end-->
+
+</div>

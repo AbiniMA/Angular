@@ -1,0 +1,115 @@
+<div style="padding: 15px !important;">
+    <div style="text-align: end;">
+        <i class="fa fa-times" mat-dialog-close="true" aria-hidden="true"></i>
+    </div>
+
+    <div class="login" *ngIf="showlogin">
+        <h5 class="loginhead">Login</h5>
+        <form [formGroup]="loginForm">
+            <div>
+                <label class="label">Email </label><br>
+                <input type="text" class="inputStyle" formControlName="email" (input)="clearLoginError()"
+                    [ngClass]="{ 'is-invalid': submittedLogin && l['email'].errors }">
+                <div *ngIf="submittedLogin && l['email'].errors" class="is-invalid">
+                    <div style="font-size: 10px;color: red;" *ngIf="l['email'].errors['required']">Email is required
+                    </div>
+                    <div style="font-size: 10px;color: red;" *ngIf="l['email'].errors['pattern']">Invalid Email Address
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button class="buyer-otpbutton" (click)="otplogin('buyerlogin')">Request OTP</button>
+                <small class="errormsg">{{buyerEmailError}}</small>
+            </div>
+            <div class="mt-2">
+                <input type="checkbox" class="checkbox-input">
+                <span class="privacytext mx-2">Agree to our Terms of use and Privacy Policy </span>
+            </div>
+        </form>
+        <div >
+            <p class="createaccounttxt mt-3">New to Alocart? <span class="accountspantxt" (click)="buyersignup()">Create an
+                    account</span></p>
+        </div>
+    </div>
+
+
+    <div class="login" *ngIf="showsignup">
+        <h5 class="loginhead">Signup</h5>
+        <form [formGroup]="signupForm">
+            <div>
+                <label class="label">Name</label><br>
+                <input type="text" class="inputStyle" formControlName="name" 
+                    [ngClass]="{ 'is-invalid': submitted && s['name'].errors }">
+                <div *ngIf="submitted && s['name'].errors" class="is-invalid">
+                    <div style="font-size: 10px;color: red;" *ngIf="s['name'].errors['required']">Name is required
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 10px;">
+                <label class="label">Phone number </label><br>
+                <input type="number" class="inputStyle" formControlName="phoneNo"
+                    [ngClass]="{ 'is-invalid': submitted && s['phoneNo'].errors }"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="10">
+                <div *ngIf="submitted && s['phoneNo'].errors" class="is-invalid">
+                    <div style="font-size: 10px;color: red;" *ngIf="s['phoneNo'].errors['required']">Phonenumber is
+                        required
+                    </div>
+                    <div style="font-size: 10px;color: red;" *ngIf="s['phoneNo'].errors['pattern']">Invalid Phonenumber
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 10px;">
+                <label class="label">Email </label><br>
+                <input type="text" class="inputStyle" formControlName="email" (input)="clearRegisterError()"
+                    [ngClass]="{ 'is-invalid': submitted && s['email'].errors }">
+                <div *ngIf="submitted && s['email'].errors" class="is-invalid">
+                    <div style="font-size: 10px;color: red;" *ngIf="s['email'].errors['required']">Email is required
+                    </div>
+                    <div style="font-size: 10px;color: red;" *ngIf="s['email'].errors['pattern']">Invalid Email Address
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="buyer-otpbutton" (click)="otpsignup('buyersignup')">Request OTP</button>
+                <small class="errormsg">{{buyersignupError}}</small>
+            </div>
+
+            <div class="mt-2">
+                <input type="checkbox" class="checkbox-input">
+                <span class="privacytext mx-2">Agree to our Terms of use and Privacy Policy </span>
+            </div>
+        </form>
+
+        <div style="margin-top: 15px;">
+            <p class="createaccounttxt mx-2">Already have account ? <span class="accountspantxt"
+                    (click)="buyerlogin()">Login</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="login" *ngIf="showotp">
+        <h5 class="loginhead">OTP Verification</h5>
+            <div style="display: flex; justify-content: center; align-items: center;height:100px;">
+                <div>
+                    <ng-otp-input #ngOtpInput  (onInputChange)="onOtpChange($event)"
+                        [config]="config"></ng-otp-input>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <p style="margin-bottom: 10px;">{{ formatTime(remainingTime) }}</p>
+                <p class="createaccounttxt">Didn’t received the OTP? 
+                    <button class="resendTxt" [disabled]="isResendDisabled" (click)="resendotp()" [ngClass]="{'disabled-text': isResendDisabled}">Resend</button>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="buyer-otpbutton" [disabled]="isSubmitDisabled" [ngClass]="{'disabled-button': isSubmitDisabled}" (click)="otpsubmit()">Submit</button>
+                <small class="errormsg">{{emptyError}}</small>
+                <small class="errormsg">{{invaliderror}}</small>
+            </div>
+    </div>
+
+</div>

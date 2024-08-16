@@ -1,0 +1,106 @@
+<div>
+    <h6 class="side-label">Identification</h6>
+    <div class="row ">
+        <div class="col-lg-6 col-md-6 col-12 mt-2">
+            <form>
+                <label class="profileform-label">Full Name</label><br>
+                <div class="inputStyle" *ngIf="editShow">
+                    <div class=" mt-2" style="display:flex;justify-content: space-between;">
+                        <div class="">
+                            <i class="fa fa-user"></i><span class="mx-3 inputbox-label">Lorem ipsum</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-edit edit-icon" style="font-size:24px" (click)="editClick()"></i>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="" *ngIf="!editShow">
+                    <input type="text" class="inputStyle" placeholder="Phone">
+
+                </div>
+            </form>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-12 mt-2">
+            <label class="profileform-label">E-mail Address</label><br>
+            <div class="inputStyle" *ngIf="editShow">
+                <div class=" mt-2" style="display:flex;justify-content: space-between;">
+                    <div class="">
+                        <i class="fa fa-envelope"></i><span class="mx-3 inputbox-label">whewiedk@gmail.com</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-edit edit-icon" style="font-size:24px" (click)="editClick()"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="" *ngIf="!editShow">
+                <input type="text" class="inputStyle" placeholder="E-mail Address">
+
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 mt-2 ">
+            <label class="profileform-label">Phone number</label><br>
+            <div class="inputStyle" *ngIf="editShow">
+                <div class=" mt-2" style="display:flex;justify-content: space-between;">
+                    <div class="">
+                        <i class="fa fa-user"></i><span class="mx-3 inputbox-label">+91 98765-43210</span>
+                    </div>
+                    <div>
+                        <i class="fa fa-edit edit-icon" style="font-size:24px" (click)="editClick()"></i>
+                    </div>
+                </div>
+
+            </div>
+            <div class="" *ngIf="!editShow">
+                <input type="text" class="inputStyle" placeholder="Mobile Number">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mt-3" *ngIf="!editShow">
+        <div class="update-profile">
+            <button class="update-button">Update</button>
+            <button class="cancel-button mx-3" (click)="backtoedit()">Cancel</button>
+        </div>
+    </div>
+
+    <div class="mobileview">
+    <div class="mt-3 " style="background-color: #f9f9f9;margin-top:20px;">
+        <div class="mobileprofile" (click)="order()">
+            <div class="d-flex">
+                <div> <i class="fa fa-shopping-bag"></i></div>
+                <div>
+                    <p class="mx-3">Orders</p>
+                </div>
+            </div>
+            <div><i class="fa fa-chevron-right profilearrow"></i></div>
+        </div>
+        <div class="mobileprofile" (click)="wishlist()">
+            <div class="d-flex">
+                <div> <i class="fa fa-heart-o "></i> </div>
+                <div>
+                    <p class="mx-3">Wishlist</p>
+                </div>
+            </div>
+            <div><i class="fa fa-chevron-right profilearrow"></i></div>
+        </div>
+        <div class="mobileprofile" (click)="address()">
+            <div class="d-flex">
+                <div> <i class="fa fa-address-book-o"></i> </div>
+                <div>
+                    <p class="mx-3">Address book</p>
+                </div>
+            </div>
+            <div><i class="fa fa-chevron-right profilearrow"></i></div>
+        </div>
+
+    </div>
+    <div class="mt-3 text-center">
+        <button class="logoutBtn">Logout</button>
+    </div>
+
+</div>
+</div>

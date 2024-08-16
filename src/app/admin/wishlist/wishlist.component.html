@@ -1,0 +1,44 @@
+<div>
+    <h6>wishlist</h6>
+    <div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 col-6 " *ngFor="let item of premiumprouducts">
+                <div class="card premiumcard" >
+                    <div class="card-header premiumcard-header">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <p class="offer-text">{{item?.offer}}</p>
+                            </div>
+                            <div class="fav-icon" >
+                                <i class="fa fa-heart heart"   aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <div class="text-center" >
+                            <img src="{{item?.image}}"  class="premieumimg">
+                        </div>
+                    </div>
+                    <div class="card-body"  style="background-color: #fff; border:none !important;">
+                        <p class="product-name mt-2">{{item?.name}}</p>
+                        <p class="amount-text mt-1">{{item?.amount}} <span
+                                class="strike-text"><del>{{item?.strike}}</del></span></p>
+                        <div class="d-flex justify-content-between" style="align-items:baseline !important;">
+                            <div class="d-flex">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <div>
+                                    <p class="" style="font-size: 12px;font-weight: 400;">(88)</p>
+                                </div>
+                            </div>
+                        <div>
+                            <i class="fa fa-trash mx-2" aria-hidden="true" (click)="deletefav()"></i>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

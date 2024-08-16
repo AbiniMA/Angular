@@ -1,0 +1,58 @@
+
+<div class="container-fluid">
+    <p class="breadcrumb">Home > Account > <span class="highlight">{{label}}</span></p>
+
+    <div class="row mt-3">
+        <div class="col-3 leftcolumn lapview">
+            <div class="mb-3">
+                <div class="d-flex p-3" style="align-items: center;width: 100%;">
+                    <img src="assets\images\Ellipse 59.png">
+                    <p class="mx-2">Lorem ipsum</p>
+                </div>
+
+                <div>
+                    <div style="display: flex;" routerLink="myprofile" routerLinkActive="active-link">
+                        <div class="icons" style="display: flex;" (click)="profile()">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <p class="icons-p">Personal Information</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex;" routerLink="myorders" routerLinkActive="active-link">
+                    <div class="icons" style="display:flex;" (click)="order()">
+                        <i class="fa fa-shopping-bag"></i>
+                        <p class="icons-p">Orders</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex " style="display: flex;" routerLink="mywishlist" routerLinkActive="active-link">
+                        <div class="icons" style="display: flex;" (click)="wishlist()">
+                            <i class="fa fa-heart-o heart" aria-hidden="true"></i>
+                            <p class="icons-p">Wishlist</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex " style="display: flex;" routerLink="myaddress" routerLinkActive="active-link">
+                        <div class="icons" style="display: flex;" (click)="address()">
+                            <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                            <p class="icons-p">Address book</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex " style="display: flex;" routerLinkActive="active-link">
+                        <div class="icons" style="display: flex;">
+                            <i class="fa fa-sign-out"></i>
+                            <p class="icons-p " style="color:#C91433" (click)="logout()">Log out</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 col-md-9 col-12 rightcolumn">
+            <div class="top-space mobileview"></div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
