@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeaderSidebarComponent } from './header-sidebar/header-sidebar.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { TestComponent } from './test/test.component';
 import { VisitShopComponent } from './visit-shop/visit-shop.component';
 import { ProductViewComponent } from './product-view/product-view.component';
 import { AddtocartComponent } from './addtocart/addtocart.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'home' },
       { path: 'home', component: HomepageComponent },
+      { path: 'test', component: TestComponent },
       {path:'visit-shop',component:VisitShopComponent},
       {path:'product-view',component:ProductViewComponent},
       {path:'addtocart',component:AddtocartComponent},

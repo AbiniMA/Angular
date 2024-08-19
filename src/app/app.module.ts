@@ -20,6 +20,8 @@ import { DeletePopupComponent } from './delete-popup/delete-popup.component';
 import { LogoutpopupComponent } from './logoutpopup/logoutpopup.component';
 import { FilterPopupComponent } from './filter-popup/filter-popup.component';
 import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component';
+import { TestComponent } from './test/test.component';
+
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { PrivacypolicyComponent } from './privacypolicy/privacypolicy.component'
     LogoutpopupComponent,
     FilterPopupComponent,
     PrivacypolicyComponent,
+    TestComponent,
+
   ],
   imports: [
     BrowserModule,

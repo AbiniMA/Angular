@@ -108,6 +108,12 @@ export class HeaderSidebarComponent {
   addcart() {
     this.router.navigateByUrl('header/addtocart');
   }
+  // test(){
+  //   this.router.navigateByUrl('header/test')
+  // }
+  trend(){
+    this.router.navigateByUrl('header/test')
+  }
 
   mobilenavlist: any[] = [
     {
